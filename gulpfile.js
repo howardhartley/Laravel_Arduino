@@ -18,12 +18,11 @@ elixir(function(mix) {
         .styles([
 
 
-            'libs/bootstrap.css',
-            'libs/blog-post.css',
+            'libs/bootstrap/css/bootstrap.css',
             'libs/font-awesome.css',
-            'libs/metisMenu.css',
-            'libs/sb-admin-2.css',
+            'libs/sb-admin.css',
             'libs/styles.css'
+
 
 
 
@@ -34,10 +33,11 @@ elixir(function(mix) {
         .scripts([
 
 
-            'libs/jquery.js',
-            'libs/bootstrap.js',
-            'libs/metisMenu.js',
-            'libs/sb-admin-2.js',
+            'libs/jquery/jquery.js',
+            'libs/popper/popper.min.js',
+            'libs/bootstrap/js/bootstrap.js',
+            'libs/jquery-easing/jquery.easing.min.js',
+            // 'libs/sb-admin.min.js',
             'libs/scripts.js'
 
 

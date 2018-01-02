@@ -16,7 +16,8 @@ class CreateMeasuresTable extends Migration
             $table->increments('id');
             $table->integer('category_id')->unsigned()->index();
             $table->integer('station_id')->unsigned()->index();
-            $table->decimal('price', 10, 5);
+            $table->integer('collection');
+            $table->decimal('value', 10, 5);
             $table->timestamps();
 
 
