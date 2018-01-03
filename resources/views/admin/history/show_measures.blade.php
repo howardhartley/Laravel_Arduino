@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             <div class="card-footer text-white clearfix z-1">
-                                <p>Καταγραφή:&nbsp;&nbsp;{{ strftime("%d %b %Y, %H %S", strtotime($measure->created_at)) }}&nbsp;&nbsp;({{ $measure->created_at->diffForHumans() }})<br>
+                                <p>Καταγραφή:&nbsp;&nbsp;{{ strftime("%d %b %Y, %H:%M", strtotime($measure->created_at)) }}&nbsp;&nbsp;({{ $measure->created_at->diffForHumans() }})<br>
                                 <hr>
                                 Συλλογή μετρήσεων:&nbsp;&nbsp;{{ $measure->collection }} </p>
                             </div>

@@ -17,9 +17,14 @@ use App\Measure;
 use App\Station;
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,7 +33,7 @@ Route::get('/', function () {
 
 
 
-//**********  Account verification  **************//
+//**********  Account verification area **************//
 
 Route::get('account/verify/{code}', function ($code) {
 
@@ -54,6 +59,36 @@ Route::get('account/verify/{code}', function ($code) {
 });
 
 
+
+
+//********** Collection Measures checkpoint area **************//
+
+
+Route::get('measures/input', function(Request $request){
+
+     if($station = Station::where('unique', $request->unique)->first()){
+        if($station->is_active){
+            if(count($station->categories) > 0){
+              $input = $request->all();
+              $col = Measure::max('collection') + 1;
+               foreach ($station->categories as $category){
+                   if(array_key_exists($category->name, $input)){
+                       if(!empty($input[$category->name])){
+                            Measure::create(['category_id' => $category->id, 'station_id' => $station->id, 'collection' => $col, 'value' => $input[$category->name]]);
+                       }
+                   }
+               }
+            }
+        }
+     }
+});
+
+
+
+
+
+
+
 //**********  Authenticate  **************//
 
 Route::auth();
@@ -66,10 +101,33 @@ Route::get('/home', 'HomeController@index');
 
 
 
-//**********  Admin area  **************//
+    //**********  Middleware checkpoint (Admin - User)  **************//
+
 
 Route::group(['middleware' => 'isAdmin'], function(){
 
+
+    //**********  User area  **************//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //**********  Admin area  **************//
+
+
+    //*****  Main page  *********//
 
     Route::get('admin', ['as' => 'admin.index', function(){
 
@@ -94,6 +152,10 @@ Route::group(['middleware' => 'isAdmin'], function(){
 
         return view('admin.index', compact('name', 'stations', 'users', 'categories', 'measures', 'sum', 'admin_stations_sum', 'users_stations_sum'));
     }]);
+
+
+
+    //*****  All controllers *********//
 
     Route::resource('admin/users', 'AdminUsersController');
     Route::resource('admin/stations', 'AdminStationsController');
