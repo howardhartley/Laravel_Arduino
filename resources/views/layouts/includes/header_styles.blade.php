@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin</title>
+    <title>Arduino CMS</title>
 
     <!-- Bootstrap Core CSS -->
 

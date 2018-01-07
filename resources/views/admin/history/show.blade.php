@@ -82,7 +82,7 @@
                                 <tr>
                                     <td><a href=" {{ route('admin.history.show.measures', $measure) }} " title="Κάνε κλίκ για προβολή της συλλογής">{{ $measure }}</a></td>
                                     <td>{{ count($st->measures()->where('collection', $measure)->get()) }}</td>
-                                    <td>{{ $st->measures()->where('collection', $measure)->first()->created_at }}</td>
+                                    <td>{{ $st->measures()->where('collection', $measure)->first()->created_at }} ({{ $st->measures()->where('collection', $measure)->first()->created_at->diffForHumans() }})</td>
                                     <td>@if(Auth::user()->id == 1 || $st->user_id != 1)
                                         {!! Form::open(['method' => 'DELETE', 'action' => ['AdminHistoryController@destroy', $measure]]) !!}
 

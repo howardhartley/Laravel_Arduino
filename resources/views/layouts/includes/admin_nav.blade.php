@@ -20,6 +20,9 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
+                        <a href=" {{ route('admin.stations.user.show') }} ">Οι σταθμοί μου</a>
+                    </li>
+                    <li>
                         <a href=" {{ route('admin.stations.index') }} ">Προβολή όλων</a>
                     </li>
                     <li>
@@ -63,6 +66,21 @@
                 Ιστορικό</span>
                 </a>
             </li>
+            <li class="nav-item {{ $active == 'update' ? 'active' : ''}}" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUpdatePages" data-parent="#exampleAccordion">
+                    <i class="fa fa-level-up" aria-hidden="true"></i>
+                    <span class="nav-link-text">
+                Ενημερώσεις</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseUpdatePages">
+                    <li>
+                        <a href=" {{ route('admin.updates.all') }} ">Προβολή όλων των σταθμών</a>
+                    </li>
+                    <li>
+                        <a href=" {{ route('admin.updates.user') }} ">Προβολή σταθμών χρήστη</a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item {{ $active == 'profile' ? 'active' : ''}}" data-toggle="tooltip" data-placement="right">
                 <a class="nav-link" href=" {{ route('admin.profile.index') }} ">
                     <i class="fa fa-user"></i>
@@ -74,7 +92,7 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link inactive-link">Καλώς ήρθες&nbsp;{{Auth::user()->name}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <a class="nav-link inactive-link">Χρήστης:&nbsp;{{Auth::user()->name}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">

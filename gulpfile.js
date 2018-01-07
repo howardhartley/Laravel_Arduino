@@ -18,9 +18,10 @@ elixir(function(mix) {
         .styles([
 
 
-            'libs/bootstrap/css/bootstrap.css',
+            'libs/bootstrap/css/bootstrap.min.css',
             'libs/font-awesome.css',
             'libs/sb-admin.css',
+            'libs/animate.css',
             'libs/styles.css'
 
 
@@ -33,11 +34,11 @@ elixir(function(mix) {
         .scripts([
 
 
-            'libs/jquery/jquery.js',
+            'libs/jquery/jquery.min.js',
             'libs/popper/popper.min.js',
-            'libs/bootstrap/js/bootstrap.js',
+            'libs/bootstrap/js/bootstrap.min.js',
             'libs/jquery-easing/jquery.easing.min.js',
-            // 'libs/sb-admin.min.js',
+            'libs/wow.min.js',
             'libs/scripts.js'
 
 

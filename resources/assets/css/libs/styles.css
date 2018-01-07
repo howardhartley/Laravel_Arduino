@@ -31,3 +31,80 @@ textarea {
     pointer-events: none!important;
     cursor: default!important;
 }
+
+
+.bg-custom {
+    background-color: #edf2f0!important;
+}
+
+
+
+/************page loader************/
+.container-fluid-relative {
+    position: relative;
+}
+
+
+#load-screen {
+    background:white;
+    position: absolute;
+    z-index: 10000;
+    top:0px;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#loading {
+
+    width: 500px;
+    height: 500px;
+    margin: 10% auto;
+    background: url(/../images/loader.gif);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.welcome {
+    font-family: Lora;
+    margin-top: 60px;
+}
+
+.change {
+    font-size: 19px;
+    margin-top: 15px;
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.welcome-text {
+    border: 4px solid #f0ad4e;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-family: Lora;
+    margin-top: 30px;
+}
+
+.marg-top-first {
+    margin-top: 170px;
+}
+
+.marg-top-second {
+    margin-top: 35px;
+}
+
+@media (max-width: 575.99px) {
+
+    .marg-top-first {
+        margin-top: 50px;
+    }
+
+}
+

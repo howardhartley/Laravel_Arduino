@@ -87,7 +87,7 @@ class AdminHistoryController extends Controller
                   }
               }
 
-            $pag_num_of_collections = $num_of_collections->paginate(5);
+            $pag_num_of_collections = ($num_of_collections)->reverse()->paginate(5);
 
 
             $collect_stations = array();

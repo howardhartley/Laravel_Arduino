@@ -25,6 +25,14 @@ class AdminStationsController extends Controller
         return view('admin.stations.index', compact('stations'));
     }
 
+
+    public function show_all()
+    {
+        $stations = Station::where('user_id', Auth::user()->id)->get()->paginate(5);
+        return view('admin.stations.show_all', compact('stations'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

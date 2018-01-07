@@ -15,18 +15,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    @yield('style')
+
     <style>
         body {
             font-family: 'Lato';
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/../images/master.jpg);
+            background-size: cover;
         }
 
         .fa-btn {
             margin-right: 6px;
         }
+
+        html{
+            height: 100%;
+        }
+
+        nav {
+            padding: 8px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+        }
+
+        a.navbar-brand {
+            color: white;
+        }
+
+        ul.nav li a {
+            color: white;
+        }
+
+        ul.nav li a:hover{
+            background: transparent;
+            color: white;
+        }
+
+        div.panel {
+            margin-top: 50px;
+        }
+
+        div.panel-heading {
+            background: #525459!important;
+            color: white!important;
+        }
+
+        div.panel-body{
+            background: #d6d6d6!important;
+        }
+
+        .element {
+            margin-top: 100px;
+            color: white;
+            font-size: 70px;
+            font-family: Lora;
+        }
+
+        .white-margin {
+            color: white;
+            margin-top: 40px;
+        }
+
+        button.navbar-toggle {
+            border: 1px solid white;
+        }
+
+        button.navbar-toggle span.icon-bar {
+            background-color: white;
+        }
+
+
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -46,9 +109,7 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Αρχική</a></li>
-                </ul>
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -78,5 +139,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+    @yield('footer')
 </body>
 </html>

@@ -1,30 +1,10 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 
-//     $('#selectAllBoxes').click(function(event){
+    $('#load-screen').delay(700).fadeOut(600, function(){
+        $(this).remove();
 
-//         if(this.checked) {
+    });
 
-//             $('.checkBoxes').each(function(){
+    new WOW().init();
 
-//                 this.checked = true;
-
-//             });
-
-//         } else {
-
-
-//             $('.checkBoxes').each(function(){
-
-//                 this.checked = false;
-
-//             });
-
-
-//         }
-
-//     });
-
-
-
-
-// });
+});

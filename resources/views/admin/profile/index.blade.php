@@ -33,7 +33,7 @@
                 @endif
 
 
-            <div class="card text-center">
+            <div class="card text-center wow pulse" data-wow-duration="1.2s" data-wow-delay="1s">
 
                     <div class="card-header bg-primary">
                         <h3 class="profile">Προφίλ</h3>
@@ -43,7 +43,7 @@
                     <div class="row">
 
                         <div class="col-md-6">
-                                <div><img src="{{ url('images/profile.png') }}" class="rounded-circle img-thumbnail" width="50%"></div>
+                                <div><img src="{{ asset('images/profile.png') }}" class="rounded-circle img-thumbnail" width="50%"></div>
                                 <br>
                                 <div>
                                     <div><a href="{{ route('admin.profile.edit.password', $user->id) }}" class ="btn btn-info">Αλλαγή κωδικού πρόσβασης</a></div>

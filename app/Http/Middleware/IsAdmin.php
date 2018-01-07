@@ -33,7 +33,7 @@ class IsAdmin
 
                 }else{
 
-                    return redirect('/');
+                    return redirect('/user');
 
                 }
 

@@ -18,7 +18,7 @@
 
             @if(count($stations) > 0)
 
-                    <div style="overflow-x:auto;">
+                <div class="wow fadeIn"  data-wow-duration="1.2s" data-wow-delay="1.3s" style="overflow-x:auto;">
                         <table class="table table-striped table-responsive">
 
                             @if(Session::has('complete'))

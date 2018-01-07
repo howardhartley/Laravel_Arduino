@@ -13,7 +13,7 @@
 
 
 <!-- Breadcrumb - content -->
-@include('layouts.includes.bread_content')
+@include('layouts.includes.admin_bread_content')
 
 
 <!-- Logout Modal -->

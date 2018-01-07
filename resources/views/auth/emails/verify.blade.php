@@ -11,7 +11,9 @@
 
     <h1>{{ $data['title'] }}</h1><br>
 
-    <p> {{ $data['content'] }} <a href="http://project.test/account/verify/{{ $user->confirmation }}"> http://project.test/account/verify/{{ $user->confirmation }} </a></p>
+
+    {{--<p> {{ $data['content'] }} <a href="http://project.test/account/verify/{{ $user->confirmation }}"> http://project.test/account/verify/{{ $user->confirmation }} </a></p>--}}
+    <p> {{ $data['content'] }} <a href="{{ $link = url('/account/verify', $user->confirmation) }}"> {{ $link }} </a></p>
 
 </body>
 </html>

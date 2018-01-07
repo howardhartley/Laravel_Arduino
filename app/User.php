@@ -52,6 +52,9 @@ class User extends Authenticatable
     }
 
 
+    public function logs(){
+        $this->hasMany('App\Log');
+    }
 
 
 }
